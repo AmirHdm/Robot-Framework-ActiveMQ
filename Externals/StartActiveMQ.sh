@@ -6,7 +6,6 @@ ACTIVEMQ_PATH="/d/ActiveMQ/classic"
 # Define the keywords to search for in the process details
 SEARCH_KEYWORDS="/Program Files/Java/jdk-20/bin/java"
 
-# Check if ActiveMQ is already running
 # shellcheck disable=SC2009
 if ps -e command | grep "$SEARCH_KEYWORDS" | grep -v grep > /dev/null; then
     # ActiveMQ is already running
