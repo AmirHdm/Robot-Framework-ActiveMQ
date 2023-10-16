@@ -1,0 +1,4 @@
+robotframework==3.2.2
+ConfigParser==6.0.0
+activemq-api-client==0.0.4
+robotframework-jmslibrary==0.2.0

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231015 22:52:57.393" rpa="false" schemaversion="4">
+<suite id="s1" name="TestSuite" source="D:\RobotFramework\AdvancedRF\Pro1\TestSuites\TestSuite.robot">
+<test id="s1-t1" name="Test 1" line="11">
+<kw name="Read Config Data">
+<var>${x}</var>
+<arg>config.ini</arg>
+<arg>Environment</arg>
+<arg>password</arg>
+<kw name="Read Config File" library="config_reader">
+<var>${config_data}</var>
+<arg>${path}</arg>
+<msg timestamp="20231015 22:52:57.423" level="INFO">{'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<msg timestamp="20231015 22:52:57.423" level="INFO">${config_data} = {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_na...</msg>
+<status status="PASS" starttime="20231015 22:52:57.423" endtime="20231015 22:52:57.423"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Configuration Data: ${config_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231015 22:52:57.424" level="INFO">Configuration Data: {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<status status="PASS" starttime="20231015 22:52:57.423" endtime="20231015 22:52:57.424"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${disered_data}</var>
+<arg>${config_data}[${target}][${target_key}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231015 22:52:57.424" level="INFO">${disered_data} = TestAmirPassword</msg>
+<status status="PASS" starttime="20231015 22:52:57.424" endtime="20231015 22:52:57.424"/>
+</kw>
+<msg timestamp="20231015 22:52:57.424" level="INFO">${x} = TestAmirPassword</msg>
+<status status="PASS" starttime="20231015 22:52:57.423" endtime="20231015 22:52:57.424"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>desired: ${x}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231015 22:52:57.424" level="INFO">desired: TestAmirPassword</msg>
+<status status="PASS" starttime="20231015 22:52:57.424" endtime="20231015 22:52:57.424"/>
+</kw>
+<status status="PASS" starttime="20231015 22:52:57.422" endtime="20231015 22:52:57.424"/>
+</test>
+<test id="s1-t2" name="Test 2" line="14">
+<kw name="Read Config Data">
+<var>${y}</var>
+<arg>config.ini</arg>
+<arg>WebUI</arg>
+<arg>login_url</arg>
+<kw name="Read Config File" library="config_reader">
+<var>${config_data}</var>
+<arg>${path}</arg>
+<msg timestamp="20231015 22:52:57.425" level="INFO">{'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<msg timestamp="20231015 22:52:57.425" level="INFO">${config_data} = {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_na...</msg>
+<status status="PASS" starttime="20231015 22:52:57.425" endtime="20231015 22:52:57.425"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Configuration Data: ${config_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231015 22:52:57.425" level="INFO">Configuration Data: {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<status status="PASS" starttime="20231015 22:52:57.425" endtime="20231015 22:52:57.425"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${disered_data}</var>
+<arg>${config_data}[${target}][${target_key}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231015 22:52:57.426" level="INFO">${disered_data} = http://testsite.net/</msg>
+<status status="PASS" starttime="20231015 22:52:57.425" endtime="20231015 22:52:57.426"/>
+</kw>
+<msg timestamp="20231015 22:52:57.426" level="INFO">${y} = http://testsite.net/</msg>
+<status status="PASS" starttime="20231015 22:52:57.425" endtime="20231015 22:52:57.426"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>desired: ${y}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231015 22:52:57.426" level="INFO">desired: http://testsite.net/</msg>
+<status status="PASS" starttime="20231015 22:52:57.426" endtime="20231015 22:52:57.426"/>
+</kw>
+<status status="PASS" starttime="20231015 22:52:57.424" endtime="20231015 22:52:57.426"/>
+</test>
+<test id="s1-t3" name="Test 3" line="17">
+<kw name="Read Config Data">
+<var>${broker}</var>
+<arg>config.ini</arg>
+<arg>ActiveMQ</arg>
+<arg>activemq_broker_url</arg>
+<kw name="Read Config File" library="config_reader">
+<var>${config_data}</var>
+<arg>${path}</arg>
+<msg timestamp="20231015 22:52:57.427" level="INFO">{'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<msg timestamp="20231015 22:52:57.427" level="INFO">${config_data} = {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_na...</msg>
+<status status="PASS" starttime="20231015 22:52:57.427" endtime="20231015 22:52:57.427"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Configuration Data: ${config_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231015 22:52:57.427" level="INFO">Configuration Data: {'Environment': {'username': 'username@mail.com', 'password': 'TestAmirPassword'}, 'WebUI': {'login_url': 'http://testsite.net/'}, 'ActiveMQ': {'activemq_broker_url': 'tcp://localhost:8161', 'queue_name': 'testActiveMQ', 'message_text': 'YourMessage'}}</msg>
+<status status="PASS" starttime="20231015 22:52:57.427" endtime="20231015 22:52:57.427"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${disered_data}</var>
+<arg>${config_data}[${target}][${target_key}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231015 22:52:57.427" level="INFO">${disered_data} = tcp://localhost:8161</msg>
+<status status="PASS" starttime="20231015 22:52:57.427" endtime="20231015 22:52:57.427"/>
+</kw>
+<msg timestamp="20231015 22:52:57.427" level="INFO">${broker} = tcp://localhost:8161</msg>
+<status status="PASS" starttime="20231015 22:52:57.426" endtime="20231015 22:52:57.427"/>
+</kw>
+<kw name="Connect To JMS">
+<arg>${broker}</arg>
+<msg timestamp="20231015 22:52:57.429" level="FAIL">No keyword with name 'Connect To JMS' found.</msg>
+<status status="FAIL" starttime="20231015 22:52:57.429" endtime="20231015 22:52:57.429"/>
+</kw>
+<kw name="Create JMS Queue">
+<arg>${queue_name}</arg>
+<status status="NOT RUN" starttime="20231015 22:52:57.430" endtime="20231015 22:52:57.430"/>
+</kw>
+<kw name="Send JMS Text Message">
+<arg>${queue_name}</arg>
+<arg>${qMessage}</arg>
+<status status="NOT RUN" starttime="20231015 22:52:57.431" endtime="20231015 22:52:57.431"/>
+</kw>
+<kw name="Disconnect From JMS">
+<status status="NOT RUN" starttime="20231015 22:52:57.432" endtime="20231015 22:52:57.432"/>
+</kw>
+<status status="FAIL" starttime="20231015 22:52:57.426" endtime="20231015 22:52:57.432">No keyword with name 'Connect To JMS' found.</status>
+</test>
+<status status="FAIL" starttime="20231015 22:52:57.394" endtime="20231015 22:52:57.433"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="TestSuite">TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231015 22:52:57.417" level="ERROR">Error in file 'D:\RobotFramework\AdvancedRF\Pro1\TestSuites\TestSuite.robot' on line 3: Importing library 'jmslibrary' failed: ModuleNotFoundError: No module named 'jmslibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\RobotFramework\AdvancedRF\Pro1\venv\Scripts\robot.exe
+  C:\Python311\python311.zip
+  C:\Python311\DLLs
+  C:\Python311\Lib
+  C:\Python311
+  D:\RobotFramework\AdvancedRF\Pro1\venv
+  D:\RobotFramework\AdvancedRF\Pro1\venv\Lib\site-packages</msg>
+</errors>
+</robot>
