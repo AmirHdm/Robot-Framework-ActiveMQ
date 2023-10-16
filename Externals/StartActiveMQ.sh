@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Define the path to your ActiveMQ installation directory
 ACTIVEMQ_PATH="/d/ActiveMQ/classic"
 
 # Define the keywords to search for in the process details
