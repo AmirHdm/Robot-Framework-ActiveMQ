@@ -18,7 +18,7 @@ else
     ./activemq start
 
     # Wait for ActiveMQ to start (adjust the sleep duration if needed)
-    sleep 5
+    sleep 3
 
     # Check if ActiveMQ started successfully
     if ps -e command | grep "$SEARCH_KEYWORDS" | grep -v grep > /dev/null; then
@@ -28,4 +28,4 @@ else
         echo "Failed to start ActiveMQ."
     fi
 fi
-sleep 5
+sleep 3

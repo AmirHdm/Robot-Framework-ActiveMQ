@@ -1,11 +1,7 @@
 *** Settings ***
-Library    config_reader.py
-Library     JMSLibrary
+Library    ../CostumerLibraries/config_reader.py
 Library  OperatingSystem
-
-*** Variables ***
-${queue_name}   Robot.Framework.Testing
-${qMessage}     Test Message
+Library    ../CostumerLibraries/ActiveMQLibrary.py
 
 *** Test Cases ***
 Test 1
@@ -15,11 +11,11 @@ Test 2
     ${y}=   Read Config Data    config.ini    WebUI       login_url
     log    desired: ${y}
 Test 3
-    ${broker}=  Read Config Data    config.ini    ActiveMQ       activemq_broker_url
-    Connect To JMS      ${broker}
-    Create JMS Queue    ${queue_name}
-    Send JMS Text Message   ${queue_name}  ${qMessage}
-    Disconnect From JMS
+    [Tags]    ActiveMQ
+    ${destination}=    Set Variable    /queue/myQueue
+    ${message}=    Set Variable    Hello, From Robot!
+    ${result}=    Send Message To ActiveMQ    ${destination}    ${message}
+    Log    ${result}
 
 *** Keywords ***
 Read Config Data
@@ -28,3 +24,4 @@ Read Config Data
     Log    Configuration Data: ${config_data}
     ${disered_data} =    Set Variable    ${config_data}[${target}][${target_key}]
     [Return]    ${disered_data}
+
