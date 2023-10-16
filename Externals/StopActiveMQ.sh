@@ -29,4 +29,4 @@ if [ -n "$PID" ]; then
 else
     echo "No Java process matching the keywords found."
 fi
-sleep 10
+sleep 5
