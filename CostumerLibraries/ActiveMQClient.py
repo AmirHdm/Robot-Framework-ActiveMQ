@@ -29,10 +29,12 @@ class ActiveMQClient:
 if __name__ == "__main__":
     client = ActiveMQClient(username='admin', password='admin')
 
-    destination = '/queue/myQueue'  # Replace with the desired destination
+    destination = '/queue/org.provider.testQueue'  # Replace with the desired destination
     message = 'Hello, ActiveMQ!'
-
-    if client.send_message(destination, message):
-        print(f"Message sent to {destination}: {message}")
-    else:
-        print("Failed to send the message.")
+    x = 0
+    while x != 1000:
+        if client.send_message(destination, message):
+            print(f"Message sent to {destination}: {message}")
+            x += 1
+        else:
+            print("Failed to send the message.")
